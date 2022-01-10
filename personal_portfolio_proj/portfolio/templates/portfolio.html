@@ -1,0 +1,35 @@
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% load static %}
+
+
+<div class="jumbotron" style="background-color:black ; color:white" align="center">
+
+
+    <h1> My list of Apps published on Github </h1>
+
+
+</div>
+</div>
+</div>
+
+
+<div class="container align center" style="border:2px solid black; margin" >
+
+    <div class="row">
+        <div class="col" align="center">
+            {% for i in tl_proj%}
+
+            <h2> {{i.title}} </h2>
+            <p> {{i.description}} </p>
+
+            <img src="{{ i.image.url}}" class="img-fluid" alt="Responsive image" width="300" height="300">
+            <br>
+            <br>
+            <a href="{{ i.url }}" style="font-weight:bold; font-size:30px; " > Git Link for this App ! </a>
+            <hr style="height:1px;border-width:0;color:gray;background-color:gray">
+            {% endfor %}
+        </div>
+    </div>
+</div>
